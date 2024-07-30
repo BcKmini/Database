@@ -1,0 +1,90 @@
+.join_font{
+    float : left;
+    margin-top : 30px;
+    margin-left : 100px;
+    font-size : 35px;
+    font-family: "Do Hyeon", sans-serif;
+  }
+  
+  .layout{
+    border : 2px solid #d4d4d4;
+    margin-top : 100px;
+    width : 90%;
+    height: 670px;
+    margin-left : 5%;
+    border-radius: 30px;
+  }
+
+  .explain{
+    border : 1px solid #BDBDBD;
+    background-color: #FFF; 
+    width : 86%;
+    height : 300px;
+    margin-left : 7%;
+    margin-top : 0.8%;
+    padding-top : 25px;
+    padding-left : 10px;
+    padding-right: 10px;;
+  }
+
+.scrolly{
+    height : 340px;
+    overflow-y : auto;
+}
+
+.input_font1{
+    float : left;
+    margin-top : 30px;
+    margin-left : 520px;
+    font-size : 25px;
+    font-family: "Do Hyeon", sans-serif;
+}
+
+    
+.input_name{
+    width: 20%;
+    border: none;
+    align-items: left;
+    margin-left : 20px;
+    margin-top : -8px;
+    position: absolute;
+    border-bottom: 3px solid #adadad;
+    outline:none;
+    color: #636e72;
+    font-size:20px;
+    height:35px;
+    font-family: "고딕체";
+    background: none;
+    text-align : center;
+    margin-bottom: 25px;
+  }
+
+  .input_font2{
+    float : left;
+    margin-top : 30px;
+    margin-left : -150px;
+    font-size : 25px;
+    font-family: "Do Hyeon", sans-serif;
+}
+
+.input_number{
+    width: 20%;
+    border:none;
+    text-align : center;
+    border-bottom: 3px solid #adadad;
+    outline:none;
+    color: #636e72;
+    font-size:25px;
+    height:35px;
+    font-family: "고딕체";
+    background: none;
+    margin-bottom: 30px;
+  }
+
+  .upload_btn{ 
+    position : absolute;
+    margin-left : 34.5%;
+    margin-top : 6%;
+  }
+
+  

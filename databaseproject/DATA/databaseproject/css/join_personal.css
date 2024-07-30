@@ -1,0 +1,291 @@
+.join_font{
+  float : left;
+  margin-top : 32px;
+  margin-left : 125px;
+  font-size : 35px;
+  font-family: "Do Hyeon", sans-serif;
+}
+
+
+.join_border{
+    float : left;
+    border : 2px solid #d4d4d4;
+    width : 90%;
+    margin-left : 5%;
+    height : 980px;
+    border-radius : 30px;
+}
+
+.pw_design{
+  width: 105%;
+  border:none;
+  align-items: left;
+  border-bottom: 3px solid #adadad;
+  outline:none;
+  color: #636e72;
+  font-size:20px;
+  height:35px;
+  font-family: "고딕체";
+  background: none;
+  text-align : center;
+  margin-left : 0px;
+}
+
+.input_personal{
+    float : left;
+    width : 50%;
+    height : 100%;
+    border :none;
+    border-right : 2px solid #d4d4d4;
+}
+
+.personal_information{
+    margin-top : 40px;
+    margin-left : 50px;
+    font-size : 35px;
+    color : #5D5D5D;
+    font-family: "Do Hyeon", sans-serif;
+    font-style :italic;
+}
+
+
+.textForm{
+    width : 90%;
+    height : 83%;
+    margin-top : -2%;
+    margin-left : 13.5%;
+}
+
+.input_font_pw{
+    font-family: "Do Hyeon", sans-serif;
+    float : left;
+    font-size : 22px;
+    margin-left : 60px;
+}
+
+.input_font{
+    font-family: "Do Hyeon", sans-serif;
+    float : left;
+    font-size : 22px;
+}
+
+.form_design{
+    width: 100%;
+    border:none;
+    align-items: left;
+    border-bottom: 3px solid #adadad;
+    outline:none;
+    color: #636e72;
+    font-size:20px;
+    height:35px;
+    font-family: "고딕체";
+    background: none;
+    text-align : center;
+}
+
+
+.radio-wrapper {
+    display: inline-block;
+    margin-right: -10px;
+  }
+
+  .box {
+    display: inline-block;
+    width: 90px;
+    height: 50px;
+    margin-top : 35px;
+    margin-left :10px;
+    border: 2px solid black;
+    border-radius : 10px;
+    text-align: center;
+    line-height: 50px;
+    cursor: pointer;
+    font-size : 20px;
+    font-family: "Do Hyeon", sans-serif;;
+  }
+
+  input[type="radio"] {
+    display: none;
+  }
+
+ 
+  input[type="radio"]:checked + label.box {
+    background-color: #C6E2EE;
+  }
+
+  .ID_form_design{
+    width: 40%;
+    border:none;
+    text-align : center;
+    border-bottom: 3px solid #adadad;
+    outline:none;
+    color: #636e72;
+    font-size:25px;
+    height:35px;
+    font-family: "고딕체";
+    background: none;
+  }
+
+  .mobile_form_design{
+    width: 20%;
+    border:none;
+    text-align : center;
+    border-bottom: 3px solid #adadad;
+    outline:none;
+    color: #636e72;
+    font-size:25px;
+    height:35px;
+    font-family: "고딕체";
+    background: none;
+  }
+
+  .body_design{
+    width: 20%;
+    border:none;
+    text-align : center;
+    border-bottom: 3px solid #adadad;
+    outline:none;
+    color: #636e72;
+    font-size:25px;
+    height:35px;
+    font-family: "고딕체";
+    background: none;
+  }
+
+  .postcode_style{
+    width: 50%;
+    border:none;
+    text-align : center;
+    border-bottom: 3px solid #adadad;
+    outline:none;
+    color: #636e72;
+    font-size:25px;
+    height:25px;
+    font-family: "고딕체";
+    background: none;
+    margin-bottom: -10px;
+  }
+
+  .post_btn{
+    float : left;
+    margin-top : 6%;
+    margin-left : -15%;
+    width : 200px;
+    border : 3px solid black;
+    border-radius: 10px;
+    height : 35px;
+  }
+
+  .post_btn_style{
+    width : 200px;
+    height : 35px;
+    border : none;
+    background-color: #C6E2EE;
+    border-radius: 10px;
+  
+    cursor: pointer;
+    font-size : 15px;
+    font-weight: bold;
+  }
+
+  .road_address1{
+    margin-top : 10px;
+    width : 80%;
+    border:none;
+    border-bottom: 3px solid #adadad;
+    outline:none;
+    color: #636e72;
+    font-size:19px;
+    height:25px;
+    font-family: "고딕체";
+    background: none;
+  }
+
+  .road_address{
+    margin-top : 30px;
+    width : 80%;
+    border:none;
+    border-bottom: 3px solid #adadad;
+    outline:none;
+    color: #636e72;
+    font-size:19px;
+    height:25px;
+    font-family: "고딕체";
+    background: none;
+  }
+
+  .disease{
+    border : none;
+    border-bottom: 2px solid #d4d4d4;;
+    width : 50%;
+    height : 45%;
+    margin-left : 50%;
+  }
+
+
+  .disease_form{
+    margin-top : 15px;
+    width : 150%;
+    border:none;
+    border-bottom: 3px solid #adadad;
+    outline:none;
+    color: #636e72;
+    font-size:19px;
+    height:25px;
+    font-family: "고딕체";
+    background: none;
+  }
+
+  .protecter{
+    border : none;
+    width : 50%;
+    height : 50%;
+    margin-left : 50%;
+  }
+
+  .relationship{
+    font-family: "Do Hyeon", sans-serif;
+    float : left;
+    font-size : 22px;
+    margin-left : 10%;
+  }
+
+  .select_relation{
+    width : 150%;
+    border : 2px solid black;
+    font-size : 15px;
+    line-height: 25px;
+    text-align : center;
+  }
+
+  .hospital_name{
+    font-family: "Do Hyeon", sans-serif;
+    float : left;
+    font-size : 22px;
+    position: absolute;
+    margin-top : 150px;
+    margin-bottom: -20%;
+  }
+
+  .hos_add{
+    float : left;
+    margin-top : 24%;
+    margin-left : 18%;
+    width : 200px;
+    border : 3px solid black;
+    border-radius: 10px;
+    height : 35px;
+  }
+
+  .hos_add1{
+    margin-top : 50px;
+    width : 80%;
+    border:none;
+    border-bottom: 3px solid #adadad;
+    outline:none;
+    color: #636e72;
+    font-size:19px;
+    height:25px;
+    font-family: "고딕체";
+    background: none;
+  }

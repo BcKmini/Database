@@ -1,0 +1,185 @@
+<!DOCTYPE HTML>
+<HTML>
+    <HEAD>
+        <meta charset="utf-8">
+        <link href = "css/style.css" rel = "stylesheet">
+        <link href = "css/find_hospital.css" rel = "stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap" rel="stylesheet">
+        
+        <title>IBK CENTER</title>
+        
+        </style>
+    </HEAD>
+
+    <BODY>
+        <header>
+        <img src = "jpg/real logo.png" class = "center-image">
+        
+        <h2 class = "con-min-width">
+            <div class = "con">
+                <nav class = "menu-bar_box1">
+                    <ul>
+                        <li><a href ="find_hospital.html" class = "block">병원찾기</a></li>
+                        <li><a href ="#" class = "block">약국찾기</a></li>
+                        <li><a href ="#" class = "block">정보조회</a></li>
+                        <li><a href ="#" class = "block">방문후기</a></li>
+                        <li><a href ="#" class = "block">개인정보수정</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </h2>
+        <hr class = "hr_style">
+        </header>
+
+        <div class="content-wrap" style="display: flex;">
+            <div class="left-wrap">
+                <div id="searchBox"> <!--키워드 검색창-->
+                    <input type="text" id="keyword" placeholder="지역 입력(ex:서울특별시)"/>
+                    <select id="category">
+                        <option value="">진료과 선택</option>
+                        <option value="내과">내과</option>
+                        <option value="정형외과">정형외과</option>
+                        <option value="소아과">소아과</option>
+                        <option value="피부과">피부과</option>
+                        <option value="안과">안과</option>
+                    </select>
+                    <button onclick="searchPlaces()" class="search_button"><img src="jpg/searchlogo.jpg" height="30px" width="30px"/></button>
+                </div>
+                <div id="map" class="map"></div> <!--지도-->
+            </div>
+            <div class="right-wrap">
+                
+            </div>
+        </div>
+    
+    </BODY>
+</HTML>
+
+<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=f6feab9806bbae57e850aaf5c0089842&libraries=services"></script>
+    <script>
+        var markers = []; // 지도에 표시될 마커 객체들을 담을 배열
+
+        // 지도 설정(중심좌표 등)
+        var mapContainer = document.getElementById('map'),
+            mapOption = {
+                center: new kakao.maps.LatLng(37.566826, 126.9786567),
+                level: 5
+            };
+
+        // 지도를 생성
+        var map = new kakao.maps.Map(mapContainer, mapOption);
+
+        // 장소 검색 객체 생성
+        var ps = new kakao.maps.services.Places(map);
+
+        // 장소 검색 함수
+        function searchPlaces() {
+            var keyword = document.getElementById('keyword').value.trim(); // 검색어 입력 값
+            var category = document.getElementById('category').value; // 선택된 진료과
+
+            if (!keyword && !category) {
+                alert('키워드를 입력하거나 진료과를 선택해주세요!');
+                return;
+            }
+
+            var searchQuery = keyword;
+            if (category) {
+                searchQuery += ' ' + category;
+            }
+
+            removeMarker(); // 기존 마커 제거
+            ps.keywordSearch(searchQuery, placesSearchCB, {useMapBounds:false}); 
+        }
+
+        // 장소 검색 콜백 함수
+        function placesSearchCB(data, status) {
+            if (status === kakao.maps.services.Status.OK) {
+                displayPlaces(data); // 검색 결과를 지도로 표시
+                displayPlaceList(data); // 검색 결과를 목록으로 표시
+            }
+        }
+
+        // 검색 결과를 지도에 표시
+        function displayPlaces(places) {
+            if (places.length > 0) {
+                var firstPlace = new kakao.maps.LatLng(places[0].y, places[0].x);
+                map.setCenter(firstPlace); // 검색된 첫 번째 장소로 중심좌표 이동
+            }
+
+            for (var i = 0; i < places.length; i++) {
+                var marker = addMarker(new kakao.maps.LatLng(places[i].y, places[i].x));
+                (function(marker, place) {
+                    kakao.maps.event.addListener(marker, 'click', function() {
+                        displayPlaceInfo(place); // 마커 클릭 시 오른편에 장소 정보 표시
+                    });
+                })(marker, places[i]);
+            }
+        }
+
+        // 검색 결과를 오른편에 목록으로 표시
+        function displayPlaceList(places) {
+            var listInfoDiv = document.getElementById('list-info');
+            listInfoDiv.innerHTML = ''; // 이전 검색결과 제거
+
+            for (var i = 0; i < places.length; i++) {
+                var place = places[i];
+                var item = document.createElement('div');
+                item.className = 'placeinfo';
+                item.innerHTML = '<a href="#" onclick="displayPlaceInfo(' + i + ')">' + place.place_name + '</a>';
+                listInfoDiv.appendChild(item);
+
+                (function(place) {
+                    item.addEventListener('click', function() {
+                        displayPlaceInfo(place); // 목록 중 하나를 클릭 시 오른편에 장소 정보 표시
+                    });
+                })(place);
+            }
+        }
+
+        // 마커를 생성
+        function addMarker(position) {
+            var imageSrc = 'https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/places_category.png',
+                imageSize = new kakao.maps.Size(27, 28),
+                imgOptions =  {
+                    spriteSize: new kakao.maps.Size(72, 208),
+                    spriteOrigin: new kakao.maps.Point(46, 72),
+                    offset: new kakao.maps.Point(11, 28)
+                },
+                markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize, imgOptions),
+                marker = new kakao.maps.Marker({
+                    position: position,
+                    image: markerImage 
+                });
+
+            marker.setMap(map);
+            markers.push(marker); // 생성된 마커를 배열에 추가
+            return marker;
+        }
+
+        // 지도 위의 마커를 제거
+        function removeMarker() {
+            for (var i = 0; i < markers.length; i++) {
+                markers[i].setMap(null);
+            }   
+            markers = [];
+        }
+
+        // 장소 정보를 표시
+        /*임시로 잠시 주석처리
+        function displayPlaceInfo(place) {
+            var detailInfoDiv = document.getElementById('detail-info'); // 정보 표시 div
+            var content = '<div class="placeinfo">' +
+                            '   <a class="title" href="' + place.place_url + '" target="_blank" title="' + place.place_name + '">' + place.place_name + '</a>' +
+                            '   <div class="info">운영시간: ' + (place.opening_hours || '정보 없음') + '</div>' +
+                            '   <div class="info">진료과목: ' + (place.medical_departments || '정보 없음') + '</div>' +
+                            '   <div class="info">연락처: ' + (place.phone || '정보 없음') + '</div>' +
+                            '   <div class="info">주소: ' + (place.road_address_name || place.address_name || '정보 없음') + '</div>' +
+                            '   <div class="info">구분: ' + (place.hospital_type || '정보 없음') + '</div>' +
+                            '</div>';
+
+            detailInfoDiv.innerHTML = content; // 정보 div에 내용 삽입
+        }
+        */
+    </script>

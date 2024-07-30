@@ -1,0 +1,182 @@
+<!DOCTYPE HTML>
+<HTML>
+    <HEAD>
+        <meta charset="utf-8">
+        <link href = "css/style.css?after" rel = "stylesheet">
+        <link href = "css/join_pharmacy.css?after" rel = "stylesheet">
+        <link href = "css/join_selecct.css?after" rel = "stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap" rel="stylesheet">
+        
+        <title>IBK CENTER</title>
+
+        <style>
+            .menu-bar_box1 a {
+                text-decoration: none;
+                color: black; /* 기본 링크 색상 */
+                transition: color 0.3s ease-in-out; /* 트랜지션 추가 */
+            }
+
+            .menu-bar_box1 a:hover {
+                color: #4374D9; /* 마우스 오버 시 링크 색상 */
+            }
+        </style>
+        
+        </style>
+    </HEAD>
+
+    <BODY>
+        <header>
+            <a href="index.php"><img src = "jpg/real logo.png" class = "center-image"></a>
+        
+        <h2 class = "con-min-width">
+            <div class = "con">
+                <nav class = "menu-bar_box1">
+                    <ul>
+                        <li><a href ="#" class = "block">병원찾기</a></li>
+                        <li><a href ="#" class = "block">약국찾기</a></li>
+                        <li><a href ="#" class = "block">정보조회</a></li>
+                        <li><a href ="#" class = "block">방문후기</a></li>
+                        <li><a href ="#" class = "block">개인정보수정</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </h2>
+
+        <hr class = "hr_style">
+
+        <div class = "join_font1">회원가입</div>
+
+        <img src = "jpg/input_select.jpg" width = "1400" class = "member_select_img">
+        <br><br><br><br>
+        
+
+        <div class = "join_border">
+            <!--환자의 개인정보 입력칸-->
+            <div class = "input_personal">
+                <p class = "personal_information">개인정보 |  &nbsp;Personal </p>
+
+                <div class = "textForm">
+                    
+                
+                    <p class = "input_font">이름<br>
+                        <input name = "loginID" type = "text" class = "form_design"></p>
+
+                    <!--성별 선택-->
+                    <div class="radio-wrapper">
+                        <input type="radio" name="gender" id="male" value="male">
+                        <label for="male" class="box">남</label>
+                      </div>
+                    
+                      <div class="radio-wrapper">
+                        <input type="radio" name="gender" id="female" value="female">
+                        <label for="female" class="box">여</label>
+                      </div>
+                      <br><br>
+                      <br><br>
+
+                      <p class = "input_font">아이디<br>
+                        <input name = "name" type = "text" class = "form_design"></p>
+                    
+
+                      <p class = "input_font_pw">비밀번호<br>
+                        <input name = "name" type = "text" class = "pw_design"></p>
+                      <br><br>
+
+                      <p class = "input_font">주민등록번호<br>
+                        <input name = "ID" type = "text" class = "ID_form_design" maxlength ="6">&nbsp;-&nbsp;<input name = "ID" type = "text" class = "ID_form_design" maxlength="7"></p>
+                    <br>
+                    <p class = "input_font">전화번호<br>
+                        <input name = "mobile1" type = "text" class = "mobile_form_design" maxlength ="3">&nbsp;-&nbsp;
+                        <input name = "mobile2" type = "text" class = "mobile_form_design" maxlength ="4">&nbsp;-&nbsp;
+                        <input name = "mobile3" type = "text" class = "mobile_form_design" maxlength ="4"></p>
+                    <br>
+
+                    <p class = "input_font">전공분야<br>
+                        <input name = "major" type = "text" class = "major_select">
+                    </p>
+                    <br>
+                </div>
+        
+            </div>
+
+            <div class = "certification_layout">
+                <p class = "personal_information">면허증 |  &nbsp;License </p>
+
+                <label class = "label" for = "input">
+                    <div class="upload_file" id = "drop_zone">
+                    <img src ="jpg/upload.png" class ="upload_img">
+                    <div class ="upload_font" id = "upload_message">
+                        <h3>Upload your files or click here!</h3></div>
+                    </div>
+                    <div class="file_list" id="file_list"></div>
+                </label>
+                
+                <input type ="file" class = "file_upload" id = "input" accept=".pdf,image/*" required = "true" multiple = "true" hidden="true">
+               
+            </div>
+
+                <div class = "working">
+                    <p class = 'personal_information'>근무지 |  &nbsp;Workplace </p>
+                </div>
+            </div>
+
+            
+                
+            </div>
+        </div>
+
+        <div class = "btn_style2">
+            <a href = "join_select.html"><img src = "jpg/pre_btn.jpg" width = "100"></a>
+            <a href = "agree_page.html"><img src = "jpg/next-btn.jpg" width = "100"></a>
+        </div>
+        <br><br><br><br>
+        </header>
+    </BODY>
+</HTML>
+
+
+<script>
+    const dropZone = document.getElementById('drop_zone');
+    const fileInput = document.getElementById('input');
+    const fileList = document.getElementById('file_list');
+    const uploadMessage = document.getElementById('upload_message');
+
+    dropZone.addEventListener('dragover', (event) => {
+        event.preventDefault();
+        dropZone.style.borderColor = '#000';
+    });
+
+    dropZone.addEventListener('dragleave', () => {
+        dropZone.style.borderColor = '#d4d4d4';
+    });
+
+    dropZone.addEventListener('drop', (event) => {
+        event.preventDefault();
+        dropZone.style.borderColor = '#d4d4d4';
+        const files = event.dataTransfer.files;
+        handleFiles(files);
+    });
+
+    fileInput.addEventListener('change', () => {
+        const files = fileInput.files;
+        handleFiles(files);
+    });
+
+    function handleFiles(files) {
+        fileList.style.display = 'none'; // Hide the file list
+        uploadMessage.innerHTML = '';
+        for (let i = 0; i < files.length; i++) {
+            const file = files[i];
+            const listItem = document.createElement('div');
+            listItem.textContent = `File: ${file.name}`;
+            // No need to append the list item to fileList
+
+            // Display the file name in the upload message area
+            if (i === 0) {
+                uploadMessage.innerHTML = `<h3>${file.name}</h3>`;
+            }
+        }
+    }
+</script>

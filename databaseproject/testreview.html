@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>IBK CENTER</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel = "stylesheet" href = "css/testreview.css">
+</head>
+<body>
+    <header>
+        <img src = "jpg/real logo.png" class = "center-image">
+        
+        <h2 class = "con-min-width">
+            <div class = "con">
+                <nav class = "menu-bar_box1">
+                    <ul>
+                        <li><a href ="find_hospital.html" class = "block">병원찾기</a></li>
+                        <li><a href ="#" class = "block">약국찾기</a></li>
+                        <li><a href ="#" class = "block">정보조회</a></li>
+                        <li><a href ="#" class = "block">방문후기</a></li>
+                        <li><a href ="#" class = "block">개인정보수정</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </h2>
+        <hr class = "hr_style">
+        </header>
+
+
+<div id="map"></div>
+<div id="search-container">
+    <input type="text" id="search-input" placeholder="검색어 입력">
+    <select id="location">
+        <option value="">지역 선택</option>
+        <option value="서울">서울</option>
+        <option value="부산">부산</option>
+        <option value="대구">대구</option>
+        <option value="인천">인천</option>
+        <option value="광주">광주</option>
+        <option value="대전">대전</option>
+        <option value="울산">울산</option>
+        <option value="세종">세종</option>
+        <option value="경기">경기</option>
+        <option value="강원">강원</option>
+        <option value="충북">충북</option>
+        <option value="충남">충남</option>
+        <option value="전북">전북</option>
+        <option value="전남">전남</option>
+        <option value="경북">경북</option>
+        <option value="경남">경남</option>
+        <option value="제주">제주</option>
+    </select>
+    <select id="category">
+        <option value="">병원, 약국</option>
+        <option value="pharmacy">약국</option>
+        <option value="hospital">병원</option>
+    </select>
+    <select id="specialty">
+        <option value="">전문의 선택</option>
+        <option value="이비인후과">이비인후과</option>
+        <option value="치과">치과</option>
+        <option value="내과">내과</option>
+        <option value="소아과">소아과</option>
+        <option value="안과">안과</option>
+        <option value="피부과">피부과</option>
+        <option value="정형외과">정형외과</option>
+        <option value="비뇨기과">비뇨기과</option>
+        <option value="정신건강의학과">정신건강의학과</option>
+        <option value="신경외과">신경외과</option>
+        <option value="외과">외과</option>
+    </select>
+    <input type="image" src="search logo.jpg" alt="Search" onclick="showResultsPanel()">
+</div>
+<div id="related-results-panel"></div>
+<div id="reviews-list"></div>
+
+<form id="review-form" action="save_review.php" method="POST" style="display: none;">
+    <input type="hidden" name="place_name" id="form-place-name">
+    <input type="hidden" name="title" id="form-title">
+    <input type="hidden" name="author" id="form-author">
+    <input type="hidden" name="date" id="form-date">
+    <input type="hidden" name="content" id="form-content">
+    <input type="hidden" name="rating" id="form-rating">
+</form>
+
+<script src="script.js"></script>
+<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=70ab7cbd67d92a1dbb0af5041b49ffd8&libraries=services"></script>
+</body>
+</html>

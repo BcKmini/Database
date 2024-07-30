@@ -1,0 +1,904 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>IBK CENTER</title>
+    <style>
+      body, html {
+    width: 100%; 
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+ #map {
+            width: 890px;
+            height: 600px;
+            left: 50px;
+            position: absolute;
+            margin-top : 120px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            border: 1px solid #ccc;
+        }
+#search-reviews-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px auto;
+}
+#search-container {
+    position: absolute;
+    bottom: 678px;
+    left: 50px;
+    width: 870px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    background: white;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+    color: white;
+    border: 1px solid #ccc;
+}
+#search-container input {
+    width: calc(100% - 330px);
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    font-size: 14px;
+    background-color: white;
+    margin-right: 10px;
+}
+#search-input {
+    width: 300px;
+}
+#search-container select {
+    margin-right: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    font-size: 14px;
+    background-color: white;
+}
+#search-container input[type="image"] {
+    width: 40px;
+    height: 40px;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    margin-right: 0;
+}
+.highlight {
+    background-color: white;
+    color: white;
+}
+.custom-button {
+    color: white;
+    border: 1px solid #ccc;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+#related-results-panel {
+    position: absolute;
+    right: 40px;
+    margin-top : 50px;
+    width: 800px;
+    height: 630px;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    overflow-y: auto;
+    padding: 20px;
+    z-index: 10;
+    border: 1px solid #ccc;
+}
+.related-item {
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.3s;
+}
+.related-item:hover {
+    background-color: #f9f9f9;
+}
+.related-item.highlight {
+    background-color: #d3d3d3;
+}
+.related-item h4 {
+    margin: 0;
+    font-size: 18px;
+    color: #333;
+    cursor: pointer;
+}
+.related-item p {
+    margin: 5px 0;
+    font-size: 14px;
+    color: #666;
+}
+.star {
+    font-size: 25px;
+    color: #d3d3d3;
+    cursor: pointer;
+    transition: color 0.3s;
+    margin-right: 5px;
+}
+.star.selected {
+    color: #ffd700;
+}
+.back-button {
+    cursor: pointer;
+    margin-left: auto;
+}
+.star:hover,
+.star:hover ~ .star {
+    color: #ffd700;
+}
+.highlight-div {
+    background-color: #D3D3D3;
+    color: black;
+    border: 1px solid white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+#reviews-list {
+    text-align: center;
+    padding-top: 20px;
+}
+#reviews-list .review-item {
+    background: #fff;
+    padding: 15px;
+    margin: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    border: 1px solid #ccc;
+}
+#reviews-list .review-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+#review-form-ui {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    max-width: 600px;
+    margin: 0 auto;
+    border: 1px solid #ccc;
+}
+#review-form-ui label {
+    font-weight: bold;
+    margin-top: 10px;
+}
+#review-form-ui input, 
+#review-form-ui textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+    outline: none;
+}
+#review-form-ui textarea {
+    resize: vertical;
+}
+#review-form-ui button {
+    padding: 10px 20px;
+    background-color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    color: #3c1e1e;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+    align-self: flex-end;
+}
+#review-form-ui button:hover {
+    background-color: #C6E2EE;
+}
+body, ul, li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+a {
+    color: inherit;
+    text-decoration: none;
+}
+.center-image {
+    float: left;
+    display: block;
+    margin-left: 20px;
+    margin-top: 10px;
+    width: 25%;
+}
+.con-min-width {
+    width: 1185px;
+    padding: 35px;
+    text-align: center;
+}
+.con {
+    width: 920px;
+    margin-left: 80%;
+    margin-top: 12px;
+    margin-right: auto;
+}
+.menu-bar_box1 > ul > li {
+    display: inline-block;
+}
+.menu-bar_box1 > ul > li > a {
+    display: block;
+    font-family: "고딕체";
+    font-size: 21px;
+    padding: 24px 40px;
+}
+.menu-bar_box1 > ul {
+    text-align: center;
+}
+.hr_style {
+    border: 3px solid #C6E2EE;
+    margin-top: -3%;
+}
+.back-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+.review-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    background-color: #f8f9fa;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+.custom-button {
+    background-color: white;
+    border: none;
+    color: black;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.custom-button img {
+    vertical-align: middle;
+    margin-right: 5px;
+}
+.button-container {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin: 10px;
+}
+#search-reviews-container {
+    text-align: center;
+    margin-top: 20px;
+}
+#search-reviews-container select {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #333;
+    border-radius: 5px 0 0 5px;
+    background-color: #D3D3D3;
+    color: black;
+    border-right: none;
+}
+#search-reviews-container select option {
+    padding: 10px;
+    background-color: #D3D3D3;
+    color: black;
+}
+#search-reviews-container input[type="text"] {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #333;
+    border-left: none;
+    border-right: none;
+    border-radius: 0;
+    width: 200px;
+}
+#search-reviews-container input[type="button"] {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #333;
+    border-left: none;
+    border-radius: 0 5px 5px 0;
+    background-color: #D3D3D3;
+    color: black;
+    cursor: pointer;
+}
+#search-reviews-container select, #search-reviews-container input[type="text"], #search-reviews-container input[type="button"] {
+    display: inline-block;
+    vertical-align: middle;
+}
+</style>
+</head>
+<body>
+    <header>
+        <a href="login.php"><img src="jpg/real logo.png" class="center-image"></a>
+        <h2 class="con-min-width">
+            <div class="con">
+                <nav class="menu-bar_box1">
+                    <ul>
+                        <li><a href="find_hospital.html" class="block">병원찾기</a></li>
+                        <li><a href="find_pharmacy.php" class="block">약국찾기</a></li>
+                        <li><a href="check_information.php" class="block">정보조회</a></li>
+                        <li><a href="review.html" class="block">방문후기</a></li>
+                        <li><a href="access_rv.php" class="block">개인정보수정</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </h2>
+        <hr class="hr_style">
+    </header>
+    
+    <div id="map"></div>
+    <div id="search-container">
+        <input type="text" id="search-input" placeholder="검색어 입력">
+        <select id="category">
+            <option value="">선택</option>
+            <option value="hospital">병원</option>
+            <option value="pharmacy">약국</option>
+        </select>
+        <select id="specialty">
+            <option value="">전문의 선택</option>
+            <option value="이비인후과">이비인후과</option>
+            <option value="치과">치과</option>
+            <option value="내과">내과</option>
+            <option value="소아과">소아과</option>
+            <option value="안과">안과</option>
+            <option value="피부과">피부과</option>
+            <option value="정형외과">정형외과</option>
+            <option value="비뇨기과">비뇨기과</option>
+            <option value="정신건강의학과">정신건강의학과</option>
+            <option value="신경외과">신경외과</option>
+            <option value="외과">외과</option>
+        </select>
+        <input type="image" src="jpg/searchlogo.png" alt="Search" onclick="showResultsPanel()">
+    </div>
+    
+    <div id="related-results-panel"></div>
+    <div id="reviews-list"></div>
+    
+    <form id="review-form" action="save_review.php" method="POST" style="display: none;">
+        <input type="hidden" name="order" id="form-order">
+        <input type="hidden" name="place_name" id="form-place-name">
+        <input type="hidden" name="title" id="form-title">
+        <input type="hidden" name="author" id="form-author">
+        <input type="hidden" name="date" id="form-date">
+        <input type="hidden" name="content" id="form-content">
+        <input type="hidden" name="rating" id="form-rating">
+    </form>
+    
+    <script>
+        var map;
+        var markers = [];
+        var infowindow;
+    
+        window.onload = function() {
+            var container = document.getElementById('map');
+            var options = {
+                center: new kakao.maps.LatLng(37.566535, 126.9779692),
+                level: 7
+            };
+    
+            map = new kakao.maps.Map(container, options);
+            infowindow = new kakao.maps.InfoWindow({zindex:1});
+    
+            var searchInput = document.getElementById('search-input');
+            searchInput.addEventListener('keydown', function(event) {
+                if (event.key === 'Enter') {
+                    event.preventDefault();
+                    showResultsPanel();
+                }
+            });
+        };
+    
+        function showResultsPanel() {
+            var category = document.getElementById('category').value;
+            var specialty = document.getElementById('specialty').value;
+            var keyword = document.getElementById('search-input').value;
+    
+            if (!category) {
+                alert("병원 또는 약국을 선택해주세요.");
+                return;
+            }
+            if (!keyword) {
+                alert("검색어를 입력해주세요.");
+                return;
+            }
+            
+            searchPlaces(keyword, category, specialty);
+        }
+    
+        function searchPlaces(keyword, category, specialty) {
+    var placesService = new kakao.maps.services.Places();
+    var query = "서울 " + keyword;
+    if (category === "pharmacy") {
+        query = "서울 약국";
+    } else if (category === "hospital") {
+        query = "서울 병원";
+        if (specialty) {
+            query += " " + specialty;
+        }
+    }
+
+    var allResults = [];
+    var pageNum = 1;
+    var maxPages = 15;
+
+    function fetchPlaces() {
+        placesService.keywordSearch(query, function(result, status, pagination) {
+            if (status === kakao.maps.services.Status.OK) {
+                allResults = allResults.concat(result);
+                if (pagination.hasNextPage && pageNum < maxPages) {
+                    pageNum++;
+                    pagination.nextPage();
+                } else {
+                    if (allResults.length === 0) {
+                        alert(category === "pharmacy" ? '약국 검색 결과가 없습니다.' : '병원 검색 결과가 없습니다.');
+                        removeMarkers();
+                        return;
+                    }
+                    displayPlaces(allResults, keyword);
+                }
+            } else if (status === kakao.maps.services.Status.ZERO_RESULT) {
+                alert(category === "pharmacy" ? '약국 검색 결과가 없습니다.' : '병원 검색 결과가 없습니다.');
+                removeMarkers();
+            } else if (status === kakao.maps.services.Status.ERROR) {
+                alert('검색 중 오류가 발생했습니다.');
+                removeMarkers();
+            }
+        }, {
+            page: pageNum
+        });
+    }
+
+    removeMarkers();
+    fetchPlaces();
+}
+
+    
+        function displayPlaces(places, keyword) {
+            var bounds = new kakao.maps.LatLngBounds();
+            for (var i = 0; i < places.length; i++) {
+                var place = places[i];
+                if (!place.place_name.includes(keyword) || !place.address_name.includes("서울")) {
+                    continue;
+                }
+                var marker = new kakao.maps.Marker({
+                    map: map,
+                    position: new kakao.maps.LatLng(place.y, place.x),
+                    title: (i + 1).toString()
+                });
+                markers.push(marker);
+                bounds.extend(new kakao.maps.LatLng(place.y, place.x));
+    
+                (function(marker, place, index) {
+                    kakao.maps.event.addListener(marker, 'click', function() {
+                        openInfoWindow(marker, place);
+                    });
+                })(marker, place, i);
+            }
+            map.setBounds(bounds);
+            displayRelatedPlaces(places, keyword);
+        }
+    
+        function removeMarkers() {
+            for (var i = 0; i < markers.length; i++) {
+                markers[i].setMap(null);
+            }
+            markers = [];
+        }
+    
+        function openInfoWindow(marker, place) {
+            displayPlaceDetails(place);
+        }
+    
+        function displayPlaceDetails(place) {
+            var relatedPanel = document.getElementById('related-results-panel');
+            relatedPanel.style.display = 'block';
+            relatedPanel.innerHTML = '';
+    
+            var item = document.createElement('div');
+            item.className = 'related-item';
+            item.innerHTML = `
+                <div>
+                    <h4 style="cursor: pointer; color: #333;">${place.place_name}</h4>
+                    <p style="color: #666;">주소: ${place.address_name}</p>
+                    <p style="color: #666;">전화번호: ${place.phone}</p>
+                    <button onclick='openReviewForm(${JSON.stringify(place)})' class="custom-button">후기 작성</button>
+                    <button onclick='openReviewListForm(${JSON.stringify(place)})' class="custom-button">후기 목록 보기</button>
+                </div>
+            `;
+            relatedPanel.appendChild(item);
+        }
+    
+        function openReviewForm(place) {
+            var relatedPanel = document.getElementById('related-results-panel');
+            relatedPanel.innerHTML = `
+                <h3 style="display: flex; align-items: center;">
+                    <img src="jpg/hos logo.png" alt="${place.place_name}" style="margin-right: 5px; width: 1em; height: 1em;">
+                    ${place.place_name}
+                </h3>
+                <img src="jpg/back logo.png" alt="Back" class="back-button" onclick="goBack()">
+                <form id="review-form-ui" style="max-width: 630px;">
+                    <input type="hidden" id="modal-place-name" value="${place.place_name}">
+                    <input type="hidden" id="modal-order" value="${Math.floor(Math.random() * 1000)}">
+                    <label for="title">제목:</label><br>
+                    <input type="text" id="title" name="title" style="max-width: 610px;"><br>
+                    <label for="author">이름:</label><br>
+                    <input type="text" id="author" name="author" style="max-width: 610px;"><br>
+                    <label for="date">날짜:</label><br>
+                    <input type="date" id="date" name="date" style="max-width: 610px;"><br>
+                    <label for="content">내용:</label><br>
+                    <textarea id="content" name="content" rows="4" cols="50" style="max-width: 610px;"></textarea><br>
+                    <label for="rating">평점:</label><br>
+                    <div id="stars">
+                        <span class="star" data-value="1">★</span>
+                        <span class="star" data-value="2">★</span>
+                        <span class="star" data-value="3">★</span>
+                        <span class="star" data-value="4">★</span>
+                        <span class="star" data-value="5">★</span>
+                    </div>
+                    <input type="hidden" id="rating" name="rating" value="1">
+                    <button type="button" onclick="submitReview()">리뷰 제출</button>
+                </form>
+            `;
+            document.querySelectorAll('.star').forEach(star => {
+                star.addEventListener('click', function() {
+                    const rating = this.getAttribute('data-value');
+                    document.getElementById('rating').value = rating;
+                    document.querySelectorAll('.star').forEach(s => {
+                        if (s.getAttribute('data-value') <= rating) {
+                            s.classList.add('selected');
+                        } else {
+                            s.classList.remove('selected');
+                        }
+                    });
+                });
+            });
+        }
+    
+        function goBack() {
+            var relatedPanel = document.getElementById('related-results-panel');
+            relatedPanel.innerHTML = '';
+            showResultsPanel();
+        }
+    
+        function openReviewListForm(place) {
+            var relatedPanel = document.getElementById('related-results-panel');
+            relatedPanel.style.display = 'block';
+            relatedPanel.innerHTML = `
+                <h3 style="display: flex; align-items: center;">
+                    <img src="jpg/hos logo.png" alt="${place.place_name}" style="margin-right: 5px; width: 1em; height: 1em;">
+                    ${place.place_name}
+                    <span style="margin-left: auto;">
+                        <img src="jpg/back logo.png" alt="Back" class="back-button" onclick="goBack()">
+                    </span>
+                </h3>
+                <div id="review-list">
+                    <div class="review-item">
+                        <div class="review-content">
+                            <div class="review-header">
+                                <span style="flex: 1; text-align: left;"><strong>순번</strong></span>
+                                <span style="flex: 1; text-align: left;"><strong>제목</strong></span>
+                                <span style="flex: 1; text-align: left;"><strong>작성자</strong></span>
+                                <span style="flex: 1; text-align: left;"><strong>날짜</strong></span>
+                                <span style="flex: 1; text-align: left;"><strong>평점</strong></span>
+                            </div>
+                            <div id="review-items" style="flex-direction: column;"></div>
+                            <div style="position: relative; height: 50px;">
+                                <div class="button-container">
+                                    <div class="custom-div highlight-div" onclick='openReviewForm(${JSON.stringify(place)})'>
+                                        후기작성
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="pagination" style="text-align: center; margin-top: 20px;"></div>
+                <div id="search-reviews-container">
+                    <select id="search-type" style="border-radius: 5px 0 0 5px;">
+                        <option value="title_content">제목 + 내용</option>
+                        <option value="title">제목</option>
+                        <option value="content">내용</option>
+                    </select>
+                    <input type="text" id="search-reviews-input" placeholder="검색어 입력" style="border-radius: 0 3px 3px 0; height: 21px;">
+                    <input type="button" value="검색" onclick="searchReviews()" style="border-radius: 0 5px 5px 0;">
+                </div>
+            `;
+            fetchReviews(place.place_name);
+        }
+    
+        function showPage(pageNumber) {
+            currentPage = pageNumber;
+            displayReviews();
+            displayPagination();
+        }
+    
+        function fetchReviews(place_name) {
+            var xhr = new XMLHttpRequest();
+            xhr.open('GET', 'get_reviews.php?place_name=' + encodeURIComponent(place_name), true);
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState == 4 && xhr.status == 200) {
+                    reviews = JSON.parse(xhr.responseText);
+                    totalPages = Math.ceil(reviews.length / reviewsPerPage);
+                    displayPagination();
+                    displayReviews();
+                }
+            };
+            xhr.send();
+        }
+    
+        function displayPagination() {
+            var pagination = document.getElementById('pagination');
+            pagination.innerHTML = '';
+    
+            if (currentPage > 1) {
+                var prevButton = document.createElement('span');
+                prevButton.className = 'page-number';
+                prevButton.innerText = '<';
+                prevButton.style.marginRight = '5px';
+                prevButton.onclick = function() {
+                    showPage(currentPage - 1);
+                };
+                pagination.appendChild(prevButton);
+            }
+    
+            var startPage = Math.max(1, currentPage - 5);
+            var endPage = Math.min(totalPages, currentPage + 4);
+    
+            for (var i = startPage; i <= endPage; i++) {
+                var pageNumber = document.createElement('span');
+                pageNumber.className = 'page-number';
+                pageNumber.innerText = i;
+                pageNumber.style.marginRight = '5px';
+                if (i === currentPage) {
+                    pageNumber.style.fontWeight = 'bold';
+                }
+                pageNumber.onclick = function() {
+                    showPage(parseInt(this.innerText));
+                };
+                pagination.appendChild(pageNumber);
+            }
+    
+            if (currentPage < totalPages) {
+                var nextButton = document.createElement('span');
+                nextButton.className = 'page-number';
+                nextButton.innerText = '>';
+                nextButton.style.marginLeft = '5px';
+                nextButton.onclick = function() {
+                    showPage(currentPage + 1);
+                };
+                pagination.appendChild(nextButton);
+            }
+        }
+    
+        function displayReviews() {
+            var reviewItems = document.getElementById('review-items');
+            reviewItems.innerHTML = '';
+            var start = (currentPage - 1) * reviewsPerPage;
+            var end = Math.min(start + reviewsPerPage, reviews.length);
+            for (var i = start; i < end; i++) {
+                var review = reviews[i];
+                var reviewData = JSON.stringify(review).replace(/"/g, '&quot;');
+                var reviewItem = document.createElement('div');
+                reviewItem.className = 'review-item';
+                reviewItem.innerHTML = `
+                    <div class="review-header" onclick="openReviewFormReadonly('${reviewData}')">
+                        <span style="flex: 1; text-align: left;"><strong>${i + 1}</strong></span>
+                        <span style="flex: 1; text-align: left;"><strong>${review.title}</strong></span>
+                        <span style="flex: 1; text-align: left;"><strong>${review.author}</strong></span>
+                        <span style="flex: 1; text-align: left;"><strong>${review.date}</strong></span>
+                        <span style="flex: 1; text-align: left;">
+                            ${getStarsHTML(review.rating)}
+                        </span>
+                    </div>
+                `;
+                reviewItems.appendChild(reviewItem);
+            }
+        }
+    
+        var currentPage = 1;
+        var reviewsPerPage = 10;
+        var reviews = [];
+        var totalPages = 100;
+    
+        function openReviewFormReadonly(reviewData) {
+            var review = JSON.parse(reviewData.replace(/&quot;/g, '"'));
+    
+            var relatedPanel = document.getElementById('related-results-panel');
+            relatedPanel.innerHTML = `
+                <h3 style="display: flex; align-items: center;">
+                    <img src="jpg/hos logo.png" alt="${review.place_name}" style="margin-right: 5px; width: 1em; height: 1em;">
+                    ${review.place_name}
+                </h3>
+                <img src="jpg/back logo.png" alt="Back" class="back-button" onclick="goBack()">
+                <form id="review-form-ui" style="max-width: 630px;">
+                    <input type="hidden" id="modal-place-name" value="${review.place_name}">
+                    <label for="title">제목:</label><br>
+                    <input type="text" id="title" name="title" value="${review.title}" readonly style="max-width: 610px;"><br>
+                    <label for="author">이름:</label><br>
+                    <input type="text" id="author" name="author" value="${review.author}" readonly style="max-width: 610px;"><br>
+                    <label for="date">날짜:</label><br>
+                    <input type="date" id="date" name="date" value="${review.date}" readonly style="max-width: 610px;"><br>
+                    <label for="content">내용:</label><br>
+                    <textarea id="content" name="content" rows="4" cols="50" readonly style="max-width: 610px;">${review.content}</textarea><br>
+                    <label for="rating">평점:</label><br>
+                    <div id="stars" style="display: flex; align-items: center;">
+                        ${getStarsHTML(review.rating)}
+                        <input type="hidden" id="rating" name="rating" value="${review.rating}">
+                    </div>
+                </form>
+            `;
+        }
+    
+        function getStarsHTML(rating) {
+            let starsHTML = '';
+            for (let i = 1; i <= 5; i++) {
+                starsHTML += `<span class="star ${i <= rating ? 'selected' : ''}" data-value="${i}">★</span>`;
+            }
+            return starsHTML;
+        }
+    
+        function showReviews() {
+            var reviewsList = document.getElementById('reviews-list');
+            reviewsList.style.display = 'block';
+            fetchReviews();
+        }
+    
+        function submitReview() {
+            var place_name = document.getElementById('modal-place-name').value;
+            var order = document.getElementById('modal-order').value;
+            var title = document.getElementById('title').value;
+            var author = document.getElementById('author').value;
+            var date = document.getElementById('date').value;
+            var content = document.getElementById('content').value;
+            var rating = document.getElementById('rating').value;
+    
+            if (!title.trim() || !author.trim() || !date.trim() || !content.trim() || !rating.trim()) {
+                alert('모든 빈칸을 작성해주세요.');
+                return;
+            }
+    
+            var xhr = new XMLHttpRequest();
+            xhr.open('POST', 'save_review.php', true);
+            xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState == 4 && xhr.status == 200) {
+                    alert('리뷰가 제출되었습니다.');
+                    goBack(); // 리뷰 제출 후 이전 화면으로 돌아감
+                } else if (xhr.readyState == 4 && xhr.status != 200) {
+                    alert('리뷰 제출 중 오류가 발생했습니다.');
+                }
+            };
+            var data = `order=${encodeURIComponent(order)}&place_name=${encodeURIComponent(place_name)}&title=${encodeURIComponent(title)}&author=${encodeURIComponent(author)}&date=${encodeURIComponent(date)}&content=${encodeURIComponent(content)}&rating=${encodeURIComponent(rating)}`;
+            console.log(data); // 디버깅을 위해 데이터 출력
+            xhr.send(data);
+        }
+    
+        function saveNote() {
+            var noteContent = document.getElementById('note-content').value;
+            if (noteContent.trim()) {
+                alert('메모가 저장되었습니다: ' + noteContent);
+            } else {
+                alert('메모를 입력해주세요.');
+            }
+        }
+    
+        function displayRelatedPlaces(places, keyword) {
+    var relatedPanel = document.getElementById('related-results-panel');
+    relatedPanel.style.display = 'block';
+    relatedPanel.innerHTML = '';
+    
+    places.forEach((place, index) => {
+        if (!place.place_name.includes(keyword) || !place.address_name.includes("서울")) {
+            return;
+        }
+        var item = document.createElement('div');
+        item.className = 'related-item';
+        item.id = 'related-item-' + index;
+        item.innerHTML = `
+            <div>
+                <h4 onclick='openReviewListForm(${JSON.stringify(place)}, ${index})' style="cursor: pointer; color: #333;">${index + 1}. ${place.place_name}</h4>
+                <p style="color: #666;">주소: ${place.address_name}</p>
+                <p style="color: #666;">전화번호: ${place.phone}</p>
+            </div>
+        `;
+        relatedPanel.appendChild(item);
+    });
+
+    // Ensure the list is displayed from the first result
+    window.scrollTo(0, 0);
+}
+
+    
+        function highlightRelatedItem(index) {
+            var items = document.querySelectorAll('.related-item');
+            items.forEach(item => {
+                item.classList.remove('highlight');
+            });
+            document.getElementById('related-item-' + index).classList.add('highlight');
+        }
+    
+        function searchReviews() {
+            var searchType = document.getElementById('search-type').value;
+            var searchTerm = document.getElementById('search-reviews-input').value.toLowerCase();
+    
+            var filteredReviews = reviews.filter(function(review) {
+                if (searchType === 'title') {
+                    return review.title.toLowerCase().includes(searchTerm);
+                } else if (searchType === 'content') {
+                    return review.content.toLowerCase().includes(searchTerm);
+                } else if (searchType === 'title_content') {
+                    return review.title.toLowerCase().includes(searchTerm) || review.content.toLowerCase().includes(searchTerm);
+                }
+            });
+    
+            displayFilteredReviews(filteredReviews);
+        }
+    
+        function displayRelatedPlaces(places, keyword) {
+    var relatedPanel = document.getElementById('related-results-panel');
+    relatedPanel.style.display = 'block';
+    relatedPanel.innerHTML = '';
+    
+    // 필터링된 결과를 정렬합니다.
+    var filteredPlaces = places.filter(place => place.place_name.includes(keyword) && place.address_name.includes("서울"));
+    
+    filteredPlaces.forEach((place, index) => {
+        var item = document.createElement('div');
+        item.className = 'related-item';
+        item.id = 'related-item-' + (index + 1); // 인덱스를 1부터 시작하도록 수정
+        item.innerHTML = `
+            <div>
+                <h4 onclick='openReviewListForm(${JSON.stringify(place)}, ${index + 1})' style="cursor: pointer; color: #333;">${index + 1}. ${place.place_name}</h4>
+                <p style="color: #666;">주소: ${place.address_name}</p>
+                <p style="color: #666;">전화번호: ${place.phone}</p>
+            </div>
+        `;
+        relatedPanel.appendChild(item);
+    });
+
+    // Ensure the list is displayed from the first result
+    window.scrollTo(0, 0);
+}
+
+
+        displayExamplePharmacies();
+    </script>
+    
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=70ab7cbd67d92a1dbb0af5041b49ffd8&libraries=services"></script>
+</body>
+</html>

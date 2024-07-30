@@ -1,0 +1,53 @@
+.input_font4{
+    float : left;
+    margin-top : 14.5%;
+    margin-left : -23.9%;
+    font-size : 25px;
+    font-family: "Do Hyeon", sans-serif;
+}
+
+.input_font5{
+    float : left;
+    margin-top : 19.3%;
+    margin-left : -23.9%;
+    font-size : 25px;
+    font-family: "Do Hyeon", sans-serif;
+}
+
+.input_font6{
+    float : left;
+    margin-top : 0.5%;
+    margin-left : 15%;
+    font-size : 25px;
+    font-family: "Do Hyeon", sans-serif;
+    position: relative;
+}
+
+.input_font7{
+    float : left;
+    margin-top : 5%; /*5*/
+    margin-left :-15.2%;
+    font-size : 25px;
+    font-family: "Do Hyeon", sans-serif;
+}
+
+.input_font8{
+    float : left;
+    margin-top : 9.7%; /*5*/
+    margin-left :-15.2%;
+    font-size : 25px;
+    font-family: "Do Hyeon", sans-serif;
+}
+
+.input_font9{
+    float : left;
+    margin-top : 1.5%; 
+    margin-left : 15.3%;  /*25*/
+    font-size : 25px;
+    font-family: "Do Hyeon", sans-serif;
+}
+
+.pre_img{
+    margin-top : 21%;
+    margin-left : 82%;
+}

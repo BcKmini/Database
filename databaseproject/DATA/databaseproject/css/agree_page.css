@@ -1,0 +1,87 @@
+.agree_font1{
+    font-size : 25px;
+    margin-left : 5%;
+}
+
+.box{
+    padding : 37px;
+    border : 1px solid #ddd;
+    background-color: #FFF; 
+    width : 85%;
+    margin-left : 5%;
+}
+
+.scrolly{
+    height : 300px;
+    overflow-y : auto;
+}
+
+
+.agree{
+    text-align: right;
+    margin-top : 10px;
+    margin-bottom: 30px;
+    width : 94%;
+}
+
+.agree_all{
+    text-align: center;
+    margin-top : 10px;
+    margin-bottom: 30px;
+    width : 100%;
+}
+
+input[type="checkbox"] {
+    width: 24px; /* 체크박스의 너비 */
+    height: 24px; /* 체크박스의 높이 */
+    margin-right: 8px;
+    margin-top : 2px;
+    vertical-align: middle;
+    cursor : pointer;
+}
+
+
+.cobalt{
+    color : #006cff;
+}
+
+.agree_f{
+    margin-top : -150%;
+    cursor: pointer;
+}
+
+.message{
+    text-align : center;
+    color : #4374D9;
+    font-size : 45px;
+    margin-top : 15px;  
+}
+
+.information{
+    background-color: #EAEAEA;
+    width : 25%;
+    margin-left : 25%;
+    height : 30%;
+    position : absolute;
+}
+
+.info{
+    font-size : 20px;
+    font-weight: bold;
+    margin-left : 10%;
+    margin-top : 50px;
+    
+}
+
+.imgd{
+    margin-left : 50%;
+    width : 25%;
+    height : 30%;
+    margin-top : -8px;
+}
+
+.homebutton{
+    margin-left : 45%;  
+    height : 50%;
+    border : none;
+}

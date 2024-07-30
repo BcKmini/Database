@@ -1,0 +1,17 @@
+.pre_img{
+    margin-top : -7%;
+    margin-left : 80%;
+}
+
+.left{
+    width : 50%;
+    height : 100%;
+    float : left;
+}
+
+.rigth{
+    width : 60%;
+    height : 90%;
+    margin-left : 40%;
+    margin-top : -18px;
+}
