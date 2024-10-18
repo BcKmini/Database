@@ -34,24 +34,6 @@ The system integrates hospitals, pharmacies, and patients, allowing for efficien
 - **Reduce Waiting Times**: Streamlined processes to minimize waiting times at medical facilities.
 - **Digital Prescription Management**: Patients can securely manage prescriptions, reducing paper consumption.
 
-## ✨ **Core Features**
-
-### 🏥 **Search & View Hospital/Pharmacy Information**
-
-- 🔍 Search for hospitals and pharmacies via an interactive map.
-- 📞 Access details like contact numbers, addresses, and working hours.
-- 🔑 Only registered members (hospital/pharmacy or patients) can access detailed information.
-
-### 📂 **Prescription Upload/Download**
-
-- Patients can securely upload and download prescriptions.
-- Ensures data security with strict document handling protocols.
-
-### 📝 **Hospital/Pharmacy Reviews**
-
-- Users can write and view reviews for hospitals and pharmacies they visit.
-- Clicking on a location on the map displays the review page with detailed information.
-
 ## 🏥 **User Requirements**
 
 ### 👤 **Patient Requirements**
@@ -70,22 +52,6 @@ The system integrates hospitals, pharmacies, and patients, allowing for efficien
 
 - **Mandatory License Upload**: Hospital/Pharmacy registration requires license upload for security compliance.
 - **Prescription Security**: Prescriptions are automatically deleted from the database after being downloaded to maintain privacy.
-
-## 📊 **Database Design**
-
-The system features a well-structured relational database to manage users, hospitals, pharmacies, and reviews efficiently.
-
-### 🗂 **Personal Table**
-Stores patient information such as name, ID, contact details, medical history, and prescriptions.
-
-### 🏥 **Hospital Table**
-Stores data on hospitals including license numbers, contact information, and working hours.
-
-### 💊 **Pharmacy Table**
-Stores data on pharmacies, including licenses, working hours, and location details.
-
-### ✍️ **Review Table**
-Tracks patient reviews with fields for place name, author, content, and rating.
 
 ### 📊 **ER Model & Tables**
 
