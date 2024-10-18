@@ -6,6 +6,18 @@
 - 🆔 202020917 **변선우**
 - 🆔 202020827 **김경민**
 
+## 🛠️ **Technology Stack**
+
+### 💻 **Languages & Tools Used**:
+
+| **Category**       | **Technologies/Tools**                                                                 |
+|--------------------|----------------------------------------------------------------------------------------|
+| **Frontend**        | - HTML5<br> - CSS3<br> - JavaScript                                                    |
+| **Backend**         | - PHP<br> - MySQL (for database management)                                            |
+| **APIs**            | - KaKao Map API (for hospital/pharmacy search and map functionalities)<br> - Public data Hospital Information [https://www.data.go.kr/](https://www.data.go.kr/) |
+| **Data Management** | - SQL (for querying the database)                                                      |
+
+
 ## 📋 **Project Overview**
 
 This project provides a **Unified Medical Service System** that aims to:
@@ -58,26 +70,6 @@ The system integrates hospitals, pharmacies, and patients, allowing for efficien
 
 - **Mandatory License Upload**: Hospital/Pharmacy registration requires license upload for security compliance.
 - **Prescription Security**: Prescriptions are automatically deleted from the database after being downloaded to maintain privacy.
-
-## 🛠️ **Technology Stack**
-
-### 💻 **Languages & Tools Used**:
-
-**Frontend**:
-- HTML5 
-- CSS3
-- JavaScript
-
-**Backend**:
-- PHP
-- MySQL (for database management)
-
-**APIs**:
-- KaKao Map API (for hospital/pharmacy search and map functionalities)
-- Public data Hospital Information (https://www.data.go.kr/)
-
-**Data Management**:
-- SQL (for querying the database)
 
 ## 📊 **Database Design**
 
