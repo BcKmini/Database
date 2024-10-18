@@ -2,9 +2,9 @@
 
 ## 👥 **Team Members**:
 
-- 🆔 **임회연**
-- 🆔 **변선우**
-- 🆔 **김경민**
+🆔 Lim Hoeyeon
+🆔 Byun Seonwoo
+🆔 Kim Kyungmin
 
 ## 🛠️ **Technology Stack**
 
