@@ -3,7 +3,9 @@
 ## 👥 **Team Members**:
 
 🆔 Lim Hoeyeon
+
 🆔 Byun Seonwoo
+
 🆔 Kim Kyungmin
 
 ## 🛠️ **Technology Stack**
