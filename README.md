@@ -1,109 +1,114 @@
-## 🏥 Comprehensive Medical Management Service
+# 🏥 **Comprehensive Medical Management Service**
 
-👥 Team Members:
+## 👥 **Team Members**:
 
-    🆔 202121054 임회연
-    🆔 202020917 변선우
-    🆔 202020827 김경민
+- 🆔 202121054 **임회연**
+- 🆔 202020917 **변선우**
+- 🆔 202020827 **김경민**
 
-📋 Project Overview
+## 📋 **Project Overview**
 
-This project provides a Unified Medical Service System that aims to:
+This project provides a **Unified Medical Service System** that aims to:
 
-    🚶 Reduce patient waiting times
-    📝 Enable digital prescriptions
-    🌿 Promote eco-friendly practices by reducing paper use
+- 🚶 **Reduce patient waiting times**
+- 📝 **Enable digital prescriptions**
+- 🌿 **Promote eco-friendly practices by reducing paper use**
 
 The system integrates hospitals, pharmacies, and patients, allowing for efficient management of medical records, prescription uploads/downloads, and user reviews, thereby enhancing the healthcare experience.
-🎯 Project Goals
 
-    Integration of Medical Services: A unified platform for seamless management of patient, hospital, and pharmacy data.
-    Reduce Waiting Times: Streamlined processes to minimize waiting times at medical facilities.
-    Digital Prescription Management: Patients can securely manage prescriptions, reducing paper consumption.
+## 🎯 **Project Goals**
 
-✨ Core Features
-🏥 Search & View Hospital/Pharmacy Information
+- **Integration of Medical Services**: A unified platform for seamless management of patient, hospital, and pharmacy data.
+- **Reduce Waiting Times**: Streamlined processes to minimize waiting times at medical facilities.
+- **Digital Prescription Management**: Patients can securely manage prescriptions, reducing paper consumption.
 
-    🔍 Search for hospitals and pharmacies via an interactive map.
-    📞 Access details like contact numbers, addresses, and working hours.
-    🔑 Only registered members (hospital/pharmacy or patients) can access detailed information.
+## ✨ **Core Features**
 
-📂 Prescription Upload/Download
+### 🏥 **Search & View Hospital/Pharmacy Information**
 
-    Patients can securely upload and download prescriptions.
-    Ensures data security with strict document handling protocols.
+- 🔍 Search for hospitals and pharmacies via an interactive map.
+- 📞 Access details like contact numbers, addresses, and working hours.
+- 🔑 Only registered members (hospital/pharmacy or patients) can access detailed information.
 
-📝 Hospital/Pharmacy Reviews
+### 📂 **Prescription Upload/Download**
 
-    Users can write and view reviews for hospitals and pharmacies they visit.
-    Clicking on a location on the map displays the review page with detailed information.
+- Patients can securely upload and download prescriptions.
+- Ensures data security with strict document handling protocols.
 
-🏥 User Requirements
-👤 Patient Requirements
+### 📝 **Hospital/Pharmacy Reviews**
 
-    Easy Registration: Patients register using their name and ID number.
-    Access Medical Information: Patients can view prescriptions and medical records to ensure accurate treatments.
-    Review System: View and write reviews for hospitals and pharmacies to share feedback.
+- Users can write and view reviews for hospitals and pharmacies they visit.
+- Clicking on a location on the map displays the review page with detailed information.
 
-🏨 Hospital/Pharmacy Requirements
+## 🏥 **User Requirements**
 
-    Access to Patient Info: Hospitals/pharmacies can easily access patient info after secure login.
-    Prescription Management: Medical professionals can upload and manage prescriptions securely.
-    Improvement via Feedback: Hospitals and pharmacies can use patient reviews for service improvement.
+### 👤 **Patient Requirements**
 
-🔐 Security Features
+- **Easy Registration**: Patients register using their name and ID number.
+- **Access Medical Information**: Patients can view prescriptions and medical records to ensure accurate treatments.
+- **Review System**: View and write reviews for hospitals and pharmacies to share feedback.
 
-    Mandatory License Upload: Hospital/Pharmacy registration requires license upload for security compliance.
-    Prescription Security: Prescriptions are automatically deleted from the database after being downloaded to maintain privacy.
+### 🏨 **Hospital/Pharmacy Requirements**
 
-🛠️ Technology Stack
-💻 Languages & Tools Used:
+- **Access to Patient Info**: Hospitals/pharmacies can easily access patient info after secure login.
+- **Prescription Management**: Medical professionals can upload and manage prescriptions securely.
+- **Improvement via Feedback**: Hospitals and pharmacies can use patient reviews for service improvement.
 
-    Frontend:
-        HTML5
-        CSS3
-        JavaScript
-        
-    Backend:
-        PHP
-        MySQL (for database management)
+## 🔐 **Security Features**
 
-    APIs:
-       KaKao Map API (for hospital/pharmacy search and map functionalities)
-       public data Hospital Information (https://www.data.go.kr/)
+- **Mandatory License Upload**: Hospital/Pharmacy registration requires license upload for security compliance.
+- **Prescription Security**: Prescriptions are automatically deleted from the database after being downloaded to maintain privacy.
 
-    Data Management:
-        SQL (for querying the database)
+## 🛠️ **Technology Stack**
 
+### 💻 **Languages & Tools Used**:
 
-📊 Database Design
+**Frontend**:
+- HTML5 
+- CSS3
+- JavaScript
+
+**Backend**:
+- PHP
+- MySQL (for database management)
+
+**APIs**:
+- KaKao Map API (for hospital/pharmacy search and map functionalities)
+- Public data Hospital Information (https://www.data.go.kr/)
+
+**Data Management**:
+- SQL (for querying the database)
+
+## 📊 **Database Design**
 
 The system features a well-structured relational database to manage users, hospitals, pharmacies, and reviews efficiently.
-🗂 Personal Table
 
+### 🗂 **Personal Table**
 Stores patient information such as name, ID, contact details, medical history, and prescriptions.
-🏥 Hospital Table
 
+### 🏥 **Hospital Table**
 Stores data on hospitals including license numbers, contact information, and working hours.
-💊 Pharmacy Table
 
+### 💊 **Pharmacy Table**
 Stores data on pharmacies, including licenses, working hours, and location details.
-✍️ Review Table
 
+### ✍️ **Review Table**
 Tracks patient reviews with fields for place name, author, content, and rating.
-📊 ER Model & Tables
 
-Our project is built on a robust Entity-Relationship Model (ER Model) that efficiently connects the relationships between patients, hospitals, pharmacies, and reviews. This ensures that data is securely handled and available when needed.
-💻 Main Functionalities
+### 📊 **ER Model & Tables**
 
-    🔑 User Registration & Login:
-    Supports registration for patients, hospitals, and pharmacies with role-based access controls.
+Our project is built on a robust **Entity-Relationship Model (ER Model)** that efficiently connects the relationships between patients, hospitals, pharmacies, and reviews. This ensures that data is securely handled and available when needed.
 
-    🏥 Hospital/Pharmacy Search:
-    Provides an interactive map to search for hospitals and pharmacies, view their reviews, and access detailed information like working hours.
+## 💻 **Main Functionalities**
 
-    📂 Prescription Management:
-    Patients can upload and download prescriptions securely, with careful management of sensitive data.
+- 🔑 **User Registration & Login**:
+Supports registration for patients, hospitals, and pharmacies with role-based access controls.
 
-    📝 Review System:
-    Patients can view and leave feedback about hospitals and pharmacies, allowing for service improvement based on reviews.
+- 🏥 **Hospital/Pharmacy Search**:
+Provides an interactive map to search for hospitals and pharmacies, view their reviews, and access detailed information like working hours.
+
+- 📂 **Prescription Management**:
+Patients can upload and download prescriptions securely, with careful management of sensitive data.
+
+- 📝 **Review System**:
+Patients can view and leave feedback about hospitals and pharmacies, allowing for service improvement based on reviews.
