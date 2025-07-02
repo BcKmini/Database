@@ -52,6 +52,11 @@
 -  처방전 관리: 환자가 민감한 데이터를 신중하게 관리하며 처방전을 안전하게 업로드 및 다운로드 가능  
 -  리뷰 시스템: 환자가 병원 및 약국에 대한 피드백을 열람하고 남길 수 있어 리뷰를 기반으로 한 서비스 개선 가능
 
+
+
+<img width="789" alt="image" src="https://github.com/user-attachments/assets/5e1847dc-93b2-4166-a3e4-d903f530618f" /> (회원가입)
+<img width="476" alt="image" src="https://github.com/user-attachments/assets/dd6911b1-b4f6-4ef7-974d-670328dc2f86" /> (회원가입)
+
 <table>
   <tr>
     <td align="center">
