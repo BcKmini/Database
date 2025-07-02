@@ -46,11 +46,21 @@
 - 의료기관 등록 필수: 병원/약국 등록 시 보안 규정 준수를 위해 사업자 등록증 업로드 필수  
 - 처방전 보안: 개인 정보 보호를 위해 처방전은 다운로드 후 데이터베이스에서 자동 삭제  
 
-## 📊 ER 모델 및 테이블
-저희 프로젝트는 환자, 병원, 약국, 리뷰 간의 관계를 효율적으로 연결하는 강력한 **개체-관계 모델(ER 모델)**을 기반으로 구축되었습니다. 이를 통해 데이터가 안전하게 처리되고 필요할 때 언제든지 사용할 수 있도록 보장합니다.
+## 주요 기능
+-  회원가입 및 로그인: 환자, 병원, 약국의 회원가입을 지원하며 역할 기반 접근 제어 제공  
+-  병원/약국 검색: 병원 및 약국을 검색하고, 리뷰를 확인하며, 운영 시간과 같은 상세 정보를 조회할 수 있는 대화형 지도 제공  
+-  처방전 관리: 환자가 민감한 데이터를 신중하게 관리하며 처방전을 안전하게 업로드 및 다운로드 가능  
+-  리뷰 시스템: 환자가 병원 및 약국에 대한 피드백을 열람하고 남길 수 있어 리뷰를 기반으로 한 서비스 개선 가능
 
-## 💻 주요 기능
-- 🔑 회원가입 및 로그인: 환자, 병원, 약국의 회원가입을 지원하며 역할 기반 접근 제어 제공  
-- 🏥 병원/약국 검색: 병원 및 약국을 검색하고, 리뷰를 확인하며, 운영 시간과 같은 상세 정보를 조회할 수 있는 대화형 지도 제공  
-- 📂 처방전 관리: 환자가 민감한 데이터를 신중하게 관리하며 처방전을 안전하게 업로드 및 다운로드 가능  
-- 📝 리뷰 시스템: 환자가 병원 및 약국에 대한 피드백을 열람하고 남길 수 있어 리뷰를 기반으로 한 서비스 개선 가능  
+<img width="446" alt="image" src="https://github.com/user-attachments/assets/f56524de-8b0c-46f1-925e-387a1aa9c6df" />
+
+<img width="422" alt="image" src="https://github.com/user-attachments/assets/062385c9-f3bc-496c-b867-fa604a7aaec7" />
+
+<img width="789" alt="image" src="https://github.com/user-attachments/assets/a0a88c36-9b87-422a-86a5-804cf2558d70" />
+
+<img width="812" alt="image" src="https://github.com/user-attachments/assets/300ae75c-a5f8-4fec-abd1-a89fe60e1309" />
+
+<img width="853" alt="image" src="https://github.com/user-attachments/assets/e2a512ea-c3d7-4ca7-b3fa-b47a970b729b" />
+
+<img width="812" alt="image" src="https://github.com/user-attachments/assets/a1b8da22-b168-4524-9bf0-dbaf0ac775dd" />
+
