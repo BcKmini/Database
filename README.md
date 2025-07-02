@@ -52,15 +52,44 @@
 -  처방전 관리: 환자가 민감한 데이터를 신중하게 관리하며 처방전을 안전하게 업로드 및 다운로드 가능  
 -  리뷰 시스템: 환자가 병원 및 약국에 대한 피드백을 열람하고 남길 수 있어 리뷰를 기반으로 한 서비스 개선 가능
 
-<img width="446" alt="image" src="https://github.com/user-attachments/assets/f56524de-8b0c-46f1-925e-387a1aa9c6df" />
+## 스크린샷
 
-<img width="422" alt="image" src="https://github.com/user-attachments/assets/062385c9-f3bc-496c-b867-fa604a7aaec7" />
-
-<img width="789" alt="image" src="https://github.com/user-attachments/assets/a0a88c36-9b87-422a-86a5-804cf2558d70" />
-
-<img width="812" alt="image" src="https://github.com/user-attachments/assets/300ae75c-a5f8-4fec-abd1-a89fe60e1309" />
-
-<img width="853" alt="image" src="https://github.com/user-attachments/assets/e2a512ea-c3d7-4ca7-b3fa-b47a970b729b" />
-
-<img width="812" alt="image" src="https://github.com/user-attachments/assets/a1b8da22-b168-4524-9bf0-dbaf0ac775dd" />
+<table>
+  <tr>
+    <td align="center">
+      <img src="https://github.com/user-attachments/assets/f56524de-8b0c-46f1-925e-387a1aa9c6df" alt="메인 화면" width="240" /><br/>
+      <sub>메인 화면</sub>
+    </td>
+    <td align="center">
+      <img src="https://github.com/user-attachments/assets/062385c9-f3bc-496c-b867-fa604a7aaec7" alt="로그인 화면" width="240" /><br/>
+      <sub>로그인 화면</sub>
+    </td>
+    <td align="center">
+      <img src="https://github.com/user-attachments/assets/a0a88c36-9b87-422a-86a5-804cf2558d70" alt="병원 검색" width="240" /><br/>
+      <sub>병원 검색</sub>
+    </td>
+    <td align="center">
+      <img src="https://github.com/user-attachments/assets/300ae75c-a5f8-4fec-abd1-a89fe60e1309" alt="약국 검색" width="240" /><br/>
+      <sub>약국 검색</sub>
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <img src="https://github.com/user-attachments/assets/e2a512ea-c3d7-4ca7-b3fa-b47a970b729b" alt="처방전 관리" width="240" /><br/>
+      <sub>처방전 관리</sub>
+    </td>
+    <td align="center">
+      <img src="https://github.com/user-attachments/assets/a1b8da22-b168-4524-9bf0-dbaf0ac775dd" alt="리뷰 시스템" width="240" /><br/>
+      <sub>리뷰 시스템</sub>
+    </td>
+    <td align="center">
+      <img src="https://github.com/user-attachments/assets/73d0d014-3052-479c-80fd-f5121f320b78" alt="대시보드" width="240" /><br/>
+      <sub>대시보드</sub>
+    </td>
+    <td align="center">
+      <img src="https://github.com/user-attachments/assets/eb723816-2589-4681-9984-724ba0a8e056" alt="설정 화면" width="240" /><br/>
+      <sub>설정 화면</sub>
+    </td>
+  </tr>
+</table>
 
