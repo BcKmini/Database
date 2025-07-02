@@ -52,29 +52,36 @@
 -  처방전 관리: 환자가 민감한 데이터를 신중하게 관리하며 처방전을 안전하게 업로드 및 다운로드 가능  
 -  리뷰 시스템: 환자가 병원 및 약국에 대한 피드백을 열람하고 남길 수 있어 리뷰를 기반으로 한 서비스 개선 가능
 
-
-
-<img width="789" alt="image" src="https://github.com/user-attachments/assets/5e1847dc-93b2-4166-a3e4-d903f530618f" /> (회원가입)
-<img width="476" alt="image" src="https://github.com/user-attachments/assets/dd6911b1-b4f6-4ef7-974d-670328dc2f86" /> (회원가입)
+## 스크린샷
 
 <table>
   <tr>
     <td align="center">
       <img src="https://github.com/user-attachments/assets/f56524de-8b0c-46f1-925e-387a1aa9c6df" alt="메인 화면" width="240" /><br/>
-      <sub>메인 화면</sub>
+      <sub>ER 다이어그램</sub>
     </td>
     <td align="center">
       <img src="https://github.com/user-attachments/assets/062385c9-f3bc-496c-b867-fa604a7aaec7" alt="로그인 화면" width="240" /><br/>
-      <sub>로그인 화면</sub>
+      <sub>메인 화면</sub>
     </td>
   </tr>
   <tr>
     <td align="center">
-      <img src="https://github.com/user-attachments/assets/a0a88c36-9b87-422a-86a5-804cf2558d70" alt="병원 검색" width="240" /><br/>
+      <img src="https://github.com/user-attachments/assets/d1d74eba-be7c-4143-9e9e-55c1cedc41c0" alt="회원가입 화면1" width="240" /><br/>
+      <sub>회원가입 화면1</sub>
+    </td>
+    <td align="center">
+      <img src="https://github.com/user-attachments/assets/393b5f42-22d7-4978-865d-b50e84548374" alt="회원가입 화면2" width="240" /><br/>
+      <sub>회원가입 화면2</sub>
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <img src="https://github.com/user-attachments/assets/5392fc1d-3771-407c-b783-12131b7b70a6" alt="병원 검색" width="240" /><br/>
       <sub>병원 검색</sub>
     </td>
     <td align="center">
-      <img src="https://github.com/user-attachments/assets/300ae75c-a5f8-4fec-abd1-a89fe60e1309" alt="약국 검색" width="240" /><br/>
+      <img src="https://github.com/user-attachments/assets/542d7e0d-a289-46ff-b2f5-f915b0f29a0a" alt="약국 검색" width="240" /><br/>
       <sub>약국 검색</sub>
     </td>
   </tr>
@@ -90,13 +97,14 @@
   </tr>
   <tr>
     <td align="center">
-      <img src="https://github.com/user-attachments/assets/73d0d014-3052-479c-80fd-f5121f320b78" alt="대시보드" width="240" /><br/>
+      <img src="https://github.com/user-attachments/assets/73d0d014-3052-479c-80fd-f5121f320b78" alt="후기 확인" width="240" /><br/>
       <sub>후기 확인</sub>
     </td>
     <td align="center">
-      <img src="https://github.com/user-attachments/assets/eb723816-2589-4681-9984-724ba0a8e056" alt="설정 화면" width="240" /><br/>
+      <img src="https://github.com/user-attachments/assets/eb723816-2589-4681-9984-724ba0a8e056" alt="후기 작성" width="240" /><br/>
       <sub>후기 작성</sub>
     </td>
   </tr>
 </table>
+
 
